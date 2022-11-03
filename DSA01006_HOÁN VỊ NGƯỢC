@@ -1,0 +1,68 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define quick() ios_base::sync_with_stdio(false); cin.tie(0);
+#define pb push_back
+using ll = long long;
+int mod = 1000000007;
+
+void out(int a[],int n)
+{
+    for(int i = 0; i < n; i++)
+        cout << a[i];
+    cout << ' ';
+}
+
+void Run()
+{
+    int test;
+    cin >> test;
+    while(test--)
+    {
+        int n;
+        cin >> n;
+        int a[n];
+        int m = n;
+        for(int i = 0; i < n; i++)
+            a[i] = m--;
+        do{
+            out(a,n);
+        }while (prev_permutation(a,a + n));
+        cout << endl;
+    }
+}
+
+int main(){
+    quick();
+    Run();
+}
+
+/* by JuneTheFirst
+#include <bits/stdc++.h>
+using namespace std;
+void Run()
+{
+    int t,n;
+    cin >> t;
+    while (t--)
+    {
+        cin >> n;
+        string s;
+        for (int i = n; i > 0; i--)
+        {
+            s = s + to_string(i);
+        }
+        cout << s << " ";
+        while (prev_permutation(s.begin(),s.end()))
+        {
+            cout << s << " ";
+        }
+        cout << endl;
+    }
+}
+int main()
+{
+    Run();
+    return 0;
+}
+*/
