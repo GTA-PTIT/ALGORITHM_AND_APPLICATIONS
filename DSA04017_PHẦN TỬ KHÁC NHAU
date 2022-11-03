@@ -1,0 +1,63 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define quick() ios_base::sync_with_stdio(false); cin.tie(0);
+#define pb push_back
+using ll = long long;
+int mod = 123456789;
+
+void Run()
+{
+    int test;
+    cin >> test;
+    while(test--)
+    {
+        int n;
+        cin >> n ;
+        ll a[n],b[n - 1];
+        for(ll &x : a)cin >> x;
+        for(ll &x : b)cin >> x;
+        int i = 0,j = 0;
+        while(i < n && j < n - 1)
+        {
+            if(a[i] != b[j])
+            {
+                cout << i + 1 << endl;
+                break;
+            }else{
+                i++;
+                j++;
+            }
+        }
+    }
+}
+
+int main(){
+    quick();
+    Run();
+}  
+
+/* by JuneTheFirst
+void Run()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int n;
+        cin >> n;
+        vector <int> a(n);
+        vector <int> b(n);
+        int res = -1;
+        for (int i = 0; i < n; i++) cin >> a[i];
+        for (int i = 0; i < n-1; i++)
+        {
+            cin >> b[i];
+            if (res == -1)
+                res = (b[i] != a[i]) ? i : res;
+        }
+        cout << res + 1 << endl;
+    }
+}
+
+*/
