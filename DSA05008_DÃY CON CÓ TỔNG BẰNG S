@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define quick() ios_base::sync_with_stdio(false); cin.tie(0);
+#define pb push_back
+using ll = long long;
+int mod = 1000000007;
+
+void Run()
+{
+    int test;
+    cin >> test;
+    while(test--)
+    {
+        int n,S;
+        cin >> n >> S;
+        int dp[40001] = {0};
+        dp[0] = 1;
+        for(int i = 1; i <= n; i++)
+        {
+            int x;
+            cin >> x;
+            dp[x] = 1;
+            for(int j = S; j >= x; j--)
+                if(dp[j - x] == 1)
+                    dp[j] = 1;
+        }
+        if(dp[S] == 1)cout <<"YES\n";
+        else cout << "NO\n";
+    }
+}
+
+int main(){
+    quick();
+    Run();
+}   
+/*
+
+*/
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Pr
