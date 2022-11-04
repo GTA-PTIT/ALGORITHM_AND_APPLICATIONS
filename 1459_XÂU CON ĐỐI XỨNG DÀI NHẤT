@@ -45,3 +45,50 @@ int main()
     Run();
     return 0;
 }
+
+//by TinyPrg194
+#include <bits/stdc++.h>
+// using namespace std;
+
+// #define quick() ios_base::sync_with_stdio(false); cin.tie(0);
+// #define pb push_back
+// using ll = long long;
+// int mod = 1000000007;
+
+// void Run()
+// {
+//     int test;
+//     cin >> test;
+//     while (test--)
+//     {
+//         string s;
+//         cin >> s;
+//         int n = s.size(),ans = 1;
+//         bool F[n + 1][n + 1];
+//         memset(F,false,sizeof(F));
+//         s = "x" + s;
+//         for(int i = 1;i <= n; i++)F[i][i] = 1;
+//         for(int len = 2; len <= n; len++)
+//         {
+//             for(int i = 1; i <= n - len + 1; i++)
+//             {
+//                 int j = i + len - 1;
+//                 if(len == 2 && s[i] == s[j])F[i][j] = true;
+//                 else {
+//                     F[i][j] = F[i + 1][j - 1] && (s[i] == s[j]);
+//                 }
+//                 if(F[i][j]) ans = max(ans,len);
+//             }
+//         }
+//         cout << ans << endl;
+//     }
+// }
+// int main()
+// {
+//     quick();
+//     Run();
+//     return 0;
+// }
+// /*
+
+// */
