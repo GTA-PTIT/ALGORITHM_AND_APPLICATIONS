@@ -1,5 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
+int findLongestIncrease(vector <int> v)
+{
+    int n = v.size();
+    int res = 0;
+    vector <int> l(n, INF);
+    vector <int> f(n);
+    for (i = 0; i < n; i++)
+    {
+        f[i] = lower_bound(l.begin(), l.begin() + res + 1, v[i]) - l.begin();
+        res = max(res, f[i] + 1);
+        l[f[i]] = v[i];
+    }
+    return res;
+}
 void Run()
 {
     int n;
