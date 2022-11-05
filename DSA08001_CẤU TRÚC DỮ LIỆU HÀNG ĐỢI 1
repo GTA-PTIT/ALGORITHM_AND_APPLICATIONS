@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define quick() ios_base::sync_with_stdio(false); cin.tie(0);
+#define pb push_back
+using ll = long long;
+int mod = 1e9 + 7;
+
+void Run()
+{
+    int n;
+    int test,q;
+    cin >> test;
+    while(test--)
+    {
+        queue<int>qe;
+        cin >> q;
+        while(q--)
+        {
+            cin >> n;
+            if(n == 1)cout << qe.size() << endl;
+            else if(n == 2){
+                if(qe.empty())cout << "YES\n";else cout << "NO\n";
+            }else if(n == 3){
+                int x; cin >> x;
+                qe.push(x);
+            }else if(n == 4){
+                if(!qe.empty())qe.pop();
+            }else if(n == 5){
+                if(!qe.empty())
+                    cout << qe.front() << endl;
+                else cout << "-1" <<endl;
+            }else if(n == 6){
+                if(!qe.empty())
+                    cout << qe.back() << endl;
+                else cout << "-1" <<endl;
+            }
+        }
+    }
+}
+int main(){
+    quick();
+    Run();
+}
+/*
+
+*/
