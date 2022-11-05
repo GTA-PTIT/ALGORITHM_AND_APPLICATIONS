@@ -1,0 +1,71 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define quick() ios_base::sync_with_stdio(false); cin.tie(0);
+#define pb push_back
+using ll = long long;
+int mod = 1e9 + 7;
+
+int n,sum = 0,x[100];
+vector<vector<int>> res;
+
+void init()
+{
+    res.clear();
+    cin >> n;
+    x[0] = 1;
+}
+
+void Try(int i)
+{
+    for(int j = x[i - 1];j <= n - sum; j++)
+    {
+        x[i] = j;
+        sum += j;
+        if(sum == n)
+        {
+            vector<int>tmp;
+            for(int l = 1; l <= i; l++)
+                tmp.pb(x[l]);
+            sort(tmp.begin(),tmp.end(),greater<int>());
+            res.pb(tmp);
+        }else
+            Try(i + 1);
+        sum -= j;
+    }
+}
+void Run()
+{
+    int test;
+    cin >> test;
+    while(test--)
+    {
+        init();
+        Try(1);
+        sort(res.begin(),res.end(),greater<vector<int>>());
+        for(int i = 0 ; i < res.size(); i++)
+        {
+            if(res[i].size() == 1)
+                cout << '(' << res[i][0] << ") ";
+            else{
+                for(int j = 0; j < res[i].size(); j++)
+                {
+                    if(j == 0)
+                        cout << '(' << res[i][j] << ' ';
+                    else if(j == res[i].size() - 1)
+                        cout << res[i][j] << ") ";
+                    else
+                        cout << res[i][j] << ' ';
+                }
+            }
+        }
+        cout <<endl;
+    }
+}
+int main(){
+    quick();
+    Run();
+}
+/*
+
+*/
