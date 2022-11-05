@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define quick() ios_base::sync_with_stdio(false); cin.tie(0);
+#define pb push_back
+using ll = long long;
+int mod = 1e9 + 7;
+
+void Run()
+{
+    queue<int> qe;
+    int q;
+    cin >> q;
+    while(q--)
+    {
+        string s;
+        cin >> s;
+        if(s == "PUSH")
+        {
+            int x;
+            cin >> x;
+            qe.push(x);
+        }else if(s == "PRINTFRONT")
+        {
+            if(!qe.empty())
+                cout << qe.front() << endl;
+            else
+                cout << "NONE\n";
+        }else{
+            if(!qe.empty())
+                qe.pop();
+        }
+    }
+}
+int main(){
+    quick();
+    Run();
+}
+/*
+
+*/
