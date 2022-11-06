@@ -55,3 +55,37 @@ int main()
     Run();
     return 0;
 }
+
+//by TinyPrg194
+void Run()
+// {
+//     int test;
+//     cin >> test;
+//     while(test--)
+//     {
+//         int n;ll k;
+//         cin >> n >> k;
+//         vector<int> v(n + 1);
+//         for(int i = 0; i < n; i++)cin >> v[i];
+//         int kt = 0;
+//         ll sum = 0;
+//         map<ll,int>mp;
+//         for(int i = 0; i < n; i++)
+//         {
+//             sum += v[i];
+//             if(sum == k)
+//             {
+//                 kt = 1;
+//                 break;
+//             }
+//             ll temp = sum - k;
+//             if(mp[temp])
+//             {
+//                 kt = 1;
+//                 break;
+//             }
+//             mp[sum]++;
+//         }
+//         if(kt)cout << "YES\n";else cout << "NO\n";
+//     }
+// }
