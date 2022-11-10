@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define quick() ios_base::sync_with_stdio(false); cin.tie(0);
+#define pb push_back
+using ll = long long;
+int mod = 1e9 + 7;
+
+int a[2][100];
+int sum,cnt,S,n;
+
+void Try(int i)
+{
+    for(int j = 1; j >= 0; j--)
+    {
+        cnt += j;
+        sum += a[j][i];
+        if(sum == S)
+        {
+            cout << cnt << endl;
+            exit(0);
+            
+        }
+        if(sum < S && i < n - 1)
+            Try(i + 1);
+        sum -= a[j][i];
+        cnt -= j;
+    }
+}
+
+int main(){
+    quick();
+    cin >> n >> S;
+    for(int i = 0; i < n; i++)cin >> a[1][i];
+    sort(a[1],a[1] + n,greater<int>());
+    Try(0);
+}
+/*
+
+*/
